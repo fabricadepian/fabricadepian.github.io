@@ -889,6 +889,7 @@ a.ae{color:inherit;text-decoration:underline;text-decoration-color:rgba(125,52,5
 a.ae:hover{opacity:1;color:var(--accent);text-decoration-color:currentColor}
 .alt a.ae,.hero-full a.ae{text-decoration-color:rgba(207,173,121,.6)}
 .alt a.ae:hover,.hero-full a.ae:hover{color:#cfad79}
-.ft-ae{margin:0 0 14px;font-size:13px;color:var(--ft-faint)}
+.ft-ae{max-width:var(--wrap);margin:0 auto;padding:0 32px 22px;font-size:13px;color:var(--ft-faint)}
+@media (max-width:640px){.ft-ae{padding:0 16px 18px}}
 .ft-ae a{color:var(--ft-text);text-decoration:underline;text-decoration-color:rgba(207,173,121,.5);text-underline-offset:3px}
 .ft-ae a:hover{color:var(--ft-accent);opacity:1}
