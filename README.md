@@ -59,4 +59,14 @@ apoi deschizi [http://localhost:8000](http://localhost:8000) în browser.
 
 ---
 
-© Asociația Fabrica de Pian. Toate drepturile rezervate. Textele, fotografiile și înregistrările de pe acest site aparțin asociației și autorilor lor și nu pot fi folosite fără acord.
+## Drepturi de autor
+
+Acest site a fost realizat de **Asociația Fabrica de Pian**.
+
+Codul sursă (HTML, CSS, JavaScript), designul, textele, fotografiile, afișele și înregistrările din acest depozit aparțin Asociației Fabrica de Pian și autorilor lor.
+
+**Nu este permisă copierea, modificarea, redistribuirea sau folosirea codului ori a conținutului, integral sau parțial, fără acordul scris al Asociației Fabrica de Pian.** Faptul că depozitul este public pe GitHub nu acordă niciun drept de utilizare.
+
+Pentru cereri de permisiune, contactați-ne prin pagina [Contact](https://fabricadepian.github.io/contact.html).
+
+© 2026 Asociația Fabrica de Pian. Toate drepturile rezervate.
