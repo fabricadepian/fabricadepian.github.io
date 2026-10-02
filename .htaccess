@@ -1,0 +1,113 @@
+# Fabrica de Pian — Apache (Romarg)
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+AddDefaultCharset UTF-8
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# HTTPS și fără www
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://fabricadepian.ro/$1 [R=301,L]
+
+# /index.html -> /
+RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# Pagini și categorii WordPress vechi
+RewriteRule ^despre-noi/?$ /despre.html [R=301,L,NC,NE]
+RewriteRule ^contact/?$ /contact.html [R=301,L,NC,NE]
+RewriteRule ^(blog|category/blog)(/.*)?$ /concerte.html [R=301,L,NC,NE]
+RewriteRule ^(fotografii|category/fotografii)(/.*)?$ /galerie.html [R=301,L,NC,NE]
+RewriteRule ^(feed|comments/feed|wp-json|xmlrpc\.php|wp-login\.php|wp-admin|wp-includes|wp-content)(/.*)?$ - [G,L,NC]
+
+# Articole vechi -> pagina potrivită
+RewriteRule ^corala-coralis/?$ /galerie/corala-coralis.html [R=301,L,NC,NE]
+RewriteRule ^recital-make-music-not-war/?$ /concerte.html [R=301,L,NC,NE]
+RewriteRule ^directioneaza-impozitul-pe-venit/?$ /sustine.html [R=301,L,NC,NE]
+RewriteRule ^recital-flori-de-mai/?$ /concerte.html [R=301,L,NC,NE]
+RewriteRule ^povestea-unui-pian/?$ /povestea.html [R=301,L,NC,NE]
+RewriteRule ^ambasadorii-fabricii-de-pian/?$ /povestea.html#ambasadori [R=301,L,NC,NE]
+RewriteRule ^sala-de-concert/?$ /galerie/sala-de-concert.html [R=301,L,NC,NE]
+RewriteRule ^klavier-art-2019/?$ /galerie/klavier-art-2019.html [R=301,L,NC,NE]
+RewriteRule ^primul-an-din-fabrica-de-pian-sarbatorit-intre-prieteni/?$ /concerte.html [R=301,L,NC,NE]
+RewriteRule ^aniversare-fabrica-de-pian/?$ /galerie/aniversare.html [R=301,L,NC,NE]
+RewriteRule ^concert-fabrica-de-pian-2/?$ /galerie/deva.html [R=301,L,NC,NE]
+RewriteRule ^fabrica-de-pian-o-fabrica-de-prieteni/?$ /concerte.html [R=301,L,NC,NE]
+RewriteRule ^concert-clara-schumann/?$ /concerte.html [R=301,L,NC,NE]
+RewriteRule ^concert-povesti-de-toamna/?$ /galerie/povesti-de-toamna.html [R=301,L,NC,NE]
+RewriteRule ^concert-fabrica-de-pian/?$ /concerte.html [R=301,L,NC,NE]
+RewriteRule ^concert-sub-genericul-fabrica-de-pian-la-palatul-cultural-lupeni/?$ /galerie/lupeni.html [R=301,L,NC,NE]
+RewriteRule ^recital-remus-henning/?$ /concerte.html [R=301,L,NC,NE]
+RewriteRule ^radu-torok-la-masterclass-cu-eduard-kunz/?$ /proiecte.html#rezultate [R=301,L,NC,NE]
+RewriteRule ^fotografii-concert-catalin-stepa/?$ /galerie/catalin-stepa.html [R=301,L,NC,NE]
+RewriteRule ^concert-silvestri-50/?$ /concerte.html [R=301,L,NC,NE]
+RewriteRule ^fotografii-concert-histoires-damour/?$ /galerie/histoires-damour.html [R=301,L,NC,NE]
+RewriteRule ^fotografii-concert-fleurs-de-printemps/?$ /galerie/fleurs-de-printemps.html [R=301,L,NC,NE]
+RewriteRule ^fotografii-armonii-de-vara/?$ /galerie/armonii-de-vara.html [R=301,L,NC,NE]
+RewriteRule ^concert-fleurs-de-printemps/?$ /concerte.html [R=301,L,NC,NE]
+RewriteRule ^concert-armonii-de-vara/?$ /concerte.html [R=301,L,NC,NE]
+RewriteRule ^succes-al-sectiei-de-muzica/?$ /proiecte.html#rezultate [R=301,L,NC,NE]
+RewriteRule ^radu-torok-pianistul-geniu/?$ /proiecte.html#rezultate [R=301,L,NC,NE]
+RewriteRule ^valea-jiului-la-inaltime-pianistica-internationala/?$ /galerie/clara-peia.html [R=301,L,NC,NE]
+RewriteRule ^pregatiri-in-fabrica-de-pian-pentru-concurs/?$ /proiecte.html#rezultate [R=301,L,NC,NE]
+RewriteRule ^fabrica-de-sunete-concert-cu-sala-plina/?$ /galerie/fabrica-de-sunete.html [R=301,L,NC,NE]
+RewriteRule ^concert-fabrica-de-sunete/?$ /concerte.html [R=301,L,NC,NE]
+RewriteRule ^olimpiada-nationala-timisoara-2019/?$ /proiecte.html#rezultate [R=301,L,NC,NE]
+RewriteRule ^cea-de-a-doua-zi-a-mobilitatii-erasmus/?$ /concerte.html [R=301,L,NC,NE]
+RewriteRule ^fabrica-de-pian-invitata-la-erasmus/?$ /concerte.html [R=301,L,NC,NE]
+RewriteRule ^ultimul-vals-aurelian-epuras/?$ /galerie/aztek.html [R=301,L,NC,NE]
+RewriteRule ^zilele-aztek-art/?$ /galerie/aztek.html [R=301,L,NC,NE]
+RewriteRule ^guvernul-prelungeste-termenul-pentru-depunerea-formularelor-230/?$ /sustine.html [R=301,L,NC,NE]
+RewriteRule ^voteaza-scoala-i-g-duca-in-campania-kinder/?$ /concerte.html [R=301,L,NC,NE]
+RewriteRule ^ziua-portilor-deschise/?$ /concerte.html [R=301,L,NC,NE]
+RewriteRule ^astazi-celebram-ziua-constantin-brancusi/?$ /concerte.html [R=301,L,NC,NE]
+RewriteRule ^puterea-artei-vindeca-orice-comunitate/?$ /concerte.html [R=301,L,NC,NE]
+RewriteRule ^concursul-international-de-interpretare-pianistica-clara-peia-lugoj/?$ /galerie/clara-peia.html [R=301,L,NC,NE]
+RewriteRule ^istoria-instrumentului-numit-pian/?$ /povestea.html [R=301,L,NC,NE]
+RewriteRule ^profesorul-adina-stan-devine-cetatean-de-onoare-al-municipiului-petrosani/?$ /povestea.html [R=301,L,NC,NE]
+RewriteRule ^inaugurare-fabrica-de-pian/?$ /galerie/inaugurare.html [R=301,L,NC,NE]
+RewriteRule ^inaugurare-proiect-fabrica-de-pian/?$ /galerie/inaugurare.html [R=301,L,NC,NE]
+RewriteRule ^redirectioneaza-2-din-impozitul-pe-venit-pentru-fabrica-de-pian/?$ /sustine.html [R=301,L,NC,NE]
+RewriteRule ^fabrica-de-pian/?$ /concerte.html [R=301,L,NC,NE]
+RewriteRule ^oamenii-cu-care-ne-mandrim/?$ /povestea.html [R=301,L,NC,NE]
+RewriteRule ^cultura-muzicala/?$ /povestea.html [R=301,L,NC,NE]
+RewriteRule ^fabiani-prcsina-pianistul-emblema/?$ /proiecte.html#rezultate [R=301,L,NC,NE]
+RewriteRule ^festival-concurs-klavier-art/?$ /galerie/klavier-art-2018.html [R=301,L,NC,NE]
+RewriteRule ^festivalul-concurs-klavier-art/?$ /proiecte.html#klavier-art [R=301,L,NC,NE]
+
+# Orice alt slug vechi
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^[a-z0-9-]+/$ /concerte.html [R=301,L,NC,NE]
+</IfModule>
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript image/svg+xml application/xml text/xml text/plain
+</IfModule>
+
+<IfModule mod_mime.c>
+AddType image/webp .webp
+AddType image/svg+xml .svg
+</IfModule>
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresDefault "access plus 1 week"
+ExpiresByType text/html "access plus 0 seconds"
+ExpiresByType text/css "access plus 1 year"
+ExpiresByType application/javascript "access plus 1 year"
+ExpiresByType image/webp "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType image/svg+xml "access plus 1 year"
+ExpiresByType image/x-icon "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>
