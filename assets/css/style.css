@@ -893,3 +893,7 @@ a.ae:hover{opacity:1;color:var(--accent);text-decoration-color:currentColor}
 @media (max-width:640px){.ft-ae{padding:0 16px 18px}}
 .ft-ae a{color:var(--ft-text);text-decoration:underline;text-decoration-color:rgba(207,173,121,.5);text-underline-offset:3px}
 .ft-ae a:hover{color:var(--ft-accent);opacity:1}
+/* „Atinsă în 2020” — fără verde */
+.facts .ok{border-color:var(--accent)!important;color:var(--accent)!important;background:rgba(125,52,55,.06)}
+/* coarda cu cifre pe telefon: linie și între punctele de pe al doilea rând */
+@media (max-width:920px){.string::before{display:none}.string .pin::after{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--line)}.string .pin:nth-child(odd)::after{right:-24px}.string .pin::before{z-index:1}}

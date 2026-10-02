@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fabricadepian.ro/sitemap.xml
+Sitemap: https://fabricadepian.github.io/sitemap.xml
