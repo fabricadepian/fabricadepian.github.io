@@ -1279,33 +1279,39 @@ main>.alt+.alt,main>.bg2+.bg2{padding-top:0}
 .fa-k{color:var(--ft-accent)}
 .fa-go{color:var(--ft-head);white-space:nowrap;padding-bottom:3px;border-bottom:1px solid rgba(207,173,121,.5)}
 .fa-go:hover{color:var(--ft-accent);opacity:1}
-.fa-bar{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:24px 40px;padding-top:30px}
-.fa-brand{display:flex;align-items:center;gap:14px;color:var(--ft-accent)}
-.fa-brand svg{width:46px;height:46px;flex-shrink:0}
+.fa-bar{display:grid;grid-template-columns:auto 1fr auto auto;align-items:end;gap:24px 40px;padding-top:30px}
+.fa-social,.fa-copy,.fa-brand small{line-height:1}
+.fa-brand{display:flex;align-items:flex-end;gap:14px;color:var(--ft-accent)}
+.fa-brand svg{width:46px;height:46px;flex-shrink:0;margin-bottom:-4.3px}
 .fa-brand span{display:flex;flex-direction:column;gap:6px}
 .fa-brand b{font:400 18px var(--display);letter-spacing:.06em;color:var(--ft-head);white-space:nowrap}
 .fa-brand small{color:var(--ft-faint);letter-spacing:.14em}
 .fa-social{display:flex;gap:24px;justify-self:center}
 .fa-social a{color:var(--ft-head);white-space:nowrap}
 .fa-social a:hover{color:var(--ft-accent);opacity:1}
-.fa-copy{color:var(--ft-faint);letter-spacing:.14em}
+.fa-copy{color:var(--ft-faint);letter-spacing:.04em;white-space:nowrap}
 .fa-copy a{color:var(--ft-faint)}
 .fa-copy a:hover{color:var(--ft-accent);opacity:1}
 .ft-a .totop{width:46px;height:46px;margin:0;border-radius:50%;border:1px solid rgba(243,235,223,.3);justify-content:center;color:var(--ft-head);transition:background .3s,color .3s,border-color .3s}
 .ft-a .totop svg{width:18px;height:18px;color:currentColor}
 .ft-a .totop:hover{background:var(--ft-head);color:var(--ft-bg);border-color:var(--ft-head);opacity:1}
-@media (max-width:1100px){
-  .fa-bar{grid-template-columns:1fr auto;grid-template-areas:"brand top" "social social" "copy copy";gap:20px 16px}
-  .fa-brand{grid-area:brand}.fa-social{grid-area:social;justify-self:start}.fa-copy{grid-area:copy}.ft-a .totop{grid-area:top}
+@media (max-width:1240px){
+  .fa-bar{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"brand top" "social top" "copy top";gap:8px 16px;align-items:end}
+  .fa-brand{grid-area:brand}
+  .fa-social{grid-area:social;justify-self:start}
+  .fa-copy{grid-area:copy;justify-self:start}
+  .ft-a .totop{grid-area:top;justify-self:end;align-self:end}
 }
 @media (max-width:640px){
   .ft-a{padding:0 16px 28px}
   .fa-sup{flex-wrap:wrap;gap:6px 20px;padding:20px 0 18px}
   .fa-sup p{flex-basis:100%;order:2}.fa-go{order:3;margin-top:4px}
-  .fa-bar{padding-top:20px;gap:12px 16px;align-items:start}
-  .fa-brand svg{width:40px;height:40px}
-  .fa-brand span{gap:3px}
+  .fa-bar{padding-top:22px;gap:8px 16px}
+  .fa-brand{gap:12px}
   .fa-brand small{letter-spacing:.06em;white-space:nowrap}
-  .fa-social{gap:18px;flex-wrap:wrap;margin-top:4px}
-  .ft-a .totop{width:40px;height:40px;align-self:start}
+  .fa-social{gap:14px;letter-spacing:.12em;flex-wrap:wrap}
+  .fa-copy{font-size:10px;letter-spacing:0}
+  .ft-a .totop{width:40px;height:40px}
 }
+@media (max-width:359px){.fa-brand small{white-space:normal;line-height:1.5}}
+@media (max-width:359px){.fa-copy{white-space:normal;line-height:1.5}}
