@@ -70,3 +70,5 @@ Codul sursă (HTML, CSS, JavaScript), designul, textele, fotografiile, afișele 
 Pentru cereri de permisiune, contactați-ne prin pagina [Contact](https://fabricadepian.github.io/contact.html).
 
 © 2026 Asociația Fabrica de Pian. Toate drepturile rezervate.
+
+Ultima actualizare: 13 octombrie 2026, publicată direct din consolă.
