@@ -1095,7 +1095,7 @@ h1,h2,.cortina blockquote{text-wrap:balance}
 @media (max-width:1100px){
   .nav-toggle{display:block}
   .brand{position:relative;z-index:60}
-  .menu{position:fixed;inset:0;z-index:55;margin:0;background:#2a1015;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;padding:110px clamp(24px,6vw,56px) 40px;overflow:auto;font-family:var(--sans);text-transform:none;letter-spacing:0;clip-path:circle(0 at calc(100% - 38px) 38px);transition:clip-path .6s cubic-bezier(.7,0,.3,1)}
+  .menu{position:fixed;inset:0;z-index:55;margin:0;background:#2a1015;flex-direction:column;align-items:stretch;justify-content:safe center;gap:0;padding:96px clamp(24px,6vw,56px);overflow:auto;font-family:var(--sans);text-transform:none;letter-spacing:0;clip-path:circle(0 at calc(100% - 38px) 38px);transition:clip-path .6s cubic-bezier(.7,0,.3,1)}
   .nav-open .menu{clip-path:circle(150% at calc(100% - 38px) 38px)}
   .nav-open body{overflow:hidden}
   .menu li{opacity:0;transform:translateY(18px);transition:opacity .4s,transform .5s cubic-bezier(.2,.7,.2,1)}
@@ -1108,7 +1108,7 @@ h1,h2,.cortina blockquote{text-wrap:balance}
   .menu a[aria-current=page]{color:#cfad79}
   .menu a::after{display:none}
   .menu li:nth-last-child(2) a[href$="sustine.html"]{margin:0;padding:12px 0 12px 34px;border:0;background:none;color:#cfad79}
-  .menu .menu-foot{display:flex;flex-direction:column;gap:6px;margin-top:36px;padding-top:0;border:0;font:400 11px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#cdb8ab}
+  .menu .menu-foot{display:flex;flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:8px 20px;margin-top:36px;padding-top:0;border:0;font:400 11px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#cdb8ab}
   .menu .menu-foot a{font:400 11px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#cdb8ab;padding:2px 0}
 }
 
