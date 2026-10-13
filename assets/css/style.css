@@ -1315,3 +1315,15 @@ main>.alt+.alt,main>.bg2+.bg2{padding-top:0}
 }
 @media (max-width:359px){.fa-brand small{white-space:normal;line-height:1.5}}
 @media (max-width:359px){.fa-copy{white-space:normal;line-height:1.5}}
+
+/* Meniu mobil: titluri mai mici, linkurile de jos lipite de baza ecranului */
+@media (max-width:1100px){
+  .menu .menu-foot{position:absolute;left:clamp(24px,6vw,56px);right:clamp(24px,6vw,56px);bottom:32px;margin:0}
+}
+@media (max-width:1100px) and (max-height:640px){
+  .menu .menu-foot{position:static;margin-top:36px}
+}
+@media (max-width:640px){
+  .menu>li:not(.menu-foot)>a,.menu>li:not(.menu-foot)>a[aria-current=page]{font-size:22px;padding:10px 0}
+  .menu li:nth-last-child(2) a[href$="sustine.html"]{padding:10px 0 10px 34px}
+}
