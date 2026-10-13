@@ -897,3 +897,359 @@ a.ae:hover{opacity:1;color:var(--accent);text-decoration-color:currentColor}
 .facts .ok{border-color:var(--accent)!important;color:var(--accent)!important;background:rgba(125,52,55,.06)}
 /* coarda cu cifre pe telefon: linie și între punctele de pe al doilea rând */
 @media (max-width:920px){.string::before{display:none}.string .pin::after{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--line)}.string .pin:nth-child(odd)::after{right:-24px}.string .pin::before{z-index:1}}
+
+/* ============================================================
+   Designul „Lecții de pian cu Aurelian” pe Fabrica de Pian (13 oct. 2026)
+   Culorile Fabricii rămân. Se schimbă tipografia, meniul, butoanele,
+   etichetele, spațiile și cardurile. Cinzel: titluri; Geist: text și
+   titluri mici; Geist Mono: etichete și meniu.
+   ============================================================ */
+@font-face{font-family:Cinzel;font-weight:400 500;font-display:swap;src:url(../fonts/cinzel-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:Cinzel;font-weight:400 500;font-display:swap;src:url(../fonts/cinzel-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Geist;font-weight:300 500;font-display:swap;src:url(../fonts/geist-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:Geist;font-weight:300 500;font-display:swap;src:url(../fonts/geist-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Geist Mono";font-weight:400;font-display:swap;src:url(../fonts/geist-mono-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Geist Mono";font-weight:400;font-display:swap;src:url(../fonts/geist-mono-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+:root{
+  /* --serif devine fontul titlurilor mici (Geist), ca la ofertele de pe Lecții; Cinzel doar pentru titlurile mari */
+  --display:Cinzel,Georgia,serif;
+  --serif:Geist,system-ui,sans-serif;
+  --sans:Geist,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --wrap:1280px;
+}
+html{font-synthesis:none}
+body{font-size:16.5px;line-height:1.7}
+
+/* titluri */
+h1,h2{font-family:var(--display);font-weight:400;letter-spacing:.01em}
+h1{font-size:clamp(38px,4.4vw,64px);line-height:1.08}
+h2{font-size:clamp(32px,3.6vw,52px);line-height:1.1}
+h3{font-family:var(--sans);font-weight:400;letter-spacing:-.01em}
+h1 em,h2 em,h3 em{font-style:normal;font-weight:inherit}
+.page-head h1,.contact-grid h1{font-size:clamp(38px,4.6vw,66px)}
+.povest h2{font-size:clamp(36px,4.4vw,62px);line-height:1.06}
+.prose h2{font-size:clamp(26px,2.8vw,38px)}
+.year>h2{font-family:var(--sans);font-weight:300;letter-spacing:-.045em}
+
+/* etichete (ca „01 — DESPRE MINE”) */
+.eyebrow{font:400 11px var(--mono);letter-spacing:.2em;text-transform:uppercase;gap:0}
+.eyebrow::before{display:none}
+.tag,.crumb,.mov .when,.person .r,.data small,.cl small,.addr small,.ft-cols .ft-h,.cgo,.film small,.aw-t small,.sheet .top small,.plate small,.pill,.facts span,.calnote,.m span,.lb-title .count,.album .row span:last-child,.cortina cite,.quote footer,.action em,.event .where,.op .d,.totop{font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.facts span{border-radius:0}
+.pill{border-radius:0;padding:6px 10px;font-size:10px}
+.crumb{letter-spacing:.14em}
+.stamp{font-family:var(--mono)!important;font-style:normal!important;font-size:11px!important;letter-spacing:.16em;text-transform:uppercase}
+.caption,.serif-i{font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.link{font:500 11px var(--sans);letter-spacing:.18em;text-transform:uppercase;padding-bottom:5px;border-bottom:1px solid currentColor;align-self:flex-start}
+.event .more{font:500 11px var(--sans);letter-spacing:.16em;text-transform:uppercase}
+
+/* butoane: drepte, mici, rărite */
+.btn{border-radius:0;font:500 11px var(--sans);letter-spacing:.18em;text-transform:uppercase;padding:17px 28px;transition:background .35s,color .35s,border-color .35s}
+.btn::after{display:none}
+.btn-solid:hover{background:transparent;color:var(--accent);border-color:var(--accent)}
+.copy,.copy-btn{border-radius:0;font:500 11px var(--sans);letter-spacing:.16em}
+
+/* antet: bară vișiniu închis, meniu numerotat 01–07 */
+.site-header,.scrolled .site-header{background:#2a1015;border-bottom:1px solid rgba(207,173,121,.25);-webkit-backdrop-filter:none;backdrop-filter:none}
+.scrolled .site-header{box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.nav{max-width:none;height:78px;padding:0 clamp(20px,4vw,56px)}
+.brand,.nav-open .brand{color:#f4eadc}
+.brand svg{color:#cfad79}
+.brand span{font:400 18px/1 var(--display);letter-spacing:.06em}
+.brand span em{font-style:normal;color:#cfad79}
+.menu{counter-reset:nr;gap:2px;font:400 11px var(--mono);letter-spacing:.16em;text-transform:uppercase}
+.menu>li:not(.menu-foot)>a:not([href$="sustine.html"])::before{counter-increment:nr;content:counter(nr,decimal-leading-zero);margin-right:7px;font-size:10px;letter-spacing:.1em;color:#cfad79}
+.menu a{display:inline-block;padding:10px 11px;color:#cdb8ab}
+.menu a::after{left:11px;right:11px;bottom:2px;height:1px;background:#cfad79;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.menu a:hover,.menu a[aria-current=page]{color:#f4eadc}
+.menu a:hover::after,.menu a[aria-current=page]::after{transform:scaleX(1);transform-origin:left}
+.menu li:nth-last-child(2) a[href$="sustine.html"]{margin-left:14px;padding:12px 16px;background:none;color:#cfad79;border:1px solid rgba(207,173,121,.5);border-radius:0}
+.menu li:nth-last-child(2) a[href$="sustine.html"]::after{display:none}
+.menu li:nth-last-child(2) a[href$="sustine.html"]:hover{background:#cfad79;color:#2a1015}
+.nav-toggle{color:#f4eadc}
+[id]{scroll-margin-top:100px}
+
+/* secțiuni: mai mult aer */
+.sec{padding:clamp(88px,10vw,150px) 0}
+.sec-head{margin-bottom:clamp(40px,4.4vw,64px)}
+.wrap{padding:0 clamp(20px,4vw,56px)}
+.page-head{padding:clamp(72px,9vw,128px) 0 clamp(56px,6vw,88px)}
+
+/* hero Acasă: titlu Cinzel cu majuscule, etichetă mono, butoane drepte */
+.hero-full h1{font-size:clamp(38px,4.3vw,66px);line-height:1.1;letter-spacing:.02em;text-transform:uppercase;margin-bottom:22px}
+.hero-full .eyebrow{margin-bottom:22px}
+.hero-full .lead{font-size:16.5px}
+.hero-full .btn-solid{background:#f4eadc;border-color:#f4eadc;color:#2a1015}
+.hero-full .btn-solid:hover{background:transparent;color:#f4eadc;border-color:#f4eadc}
+.hf-ghost{border:0!important;border-bottom:1px solid #cfad79!important;padding:0 0 6px!important;margin-left:12px;align-self:center}
+.aw-t b,.aw-m b{font-family:var(--sans);font-weight:400;letter-spacing:-.01em}
+.aw-m small{font-family:var(--mono);font-style:normal;font-size:8px;letter-spacing:.1em;text-transform:uppercase}
+.hero h1{font-size:clamp(38px,4.6vw,66px)}
+
+/* cifre: Geist subțire, etichete mono (ca „37+ ani”) */
+.pin b,.stat b,.way .big{font-family:var(--sans);font-weight:300;letter-spacing:-.045em;font-size:clamp(46px,4.6vw,66px);line-height:1}
+.pin span,.stat span{font:400 11px/1.6 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.m b{font-family:var(--sans);font-weight:300;letter-spacing:-.02em}
+.m i{font-family:var(--sans);font-size:11.5px}
+.part .n,.mv,.moves .mv,.stage .mv,.mov .mv,.clist .d,.event .d,.op .o{font-family:var(--mono)!important;font-style:normal!important;font-size:12px!important;letter-spacing:.14em;color:var(--accent)}
+.part .n{font-size:13px!important;padding-top:6px}
+
+/* citate mari: Cinzel */
+.cortina blockquote,.quote p,.pull,.premiu blockquote{font-family:var(--display);font-style:normal;font-weight:400;letter-spacing:.01em}
+.cortina blockquote{font-size:clamp(34px,4.4vw,64px);line-height:1.12}
+.cortina blockquote em{font-style:normal}
+.quote p{font-size:clamp(22px,2.4vw,30px);line-height:1.35}
+.pull{font-size:clamp(22px,2.4vw,30px);line-height:1.35}
+.partners p{font-family:var(--sans);font-size:16px;line-height:1.9}
+
+/* carduri: fără linii, doar umbră sus, aceeași culoare cu secțiunea */
+.part,.way,.action,.card,.data{border:0!important;border-radius:0;background:transparent;box-shadow:0 -14px 28px -18px rgba(42,16,21,.35)}
+.alt .part,.alt .way,.alt .action,.alt .card,.alt .data{box-shadow:0 -14px 28px -18px rgba(0,0,0,.6)}
+.part{padding:26px 22px;transition:background .4s}
+.part:hover,.action:hover{background:rgba(125,52,55,.05)}
+.part.open{border:0!important;opacity:.75}
+.part h3{font-size:clamp(20px,1.8vw,25px)}
+.data>div{border:0!important;box-shadow:0 -1px 0 rgba(42,16,21,.08)}
+.way h3,.action b,.card h3{font-family:var(--sans);font-weight:400;font-size:clamp(21px,2vw,27px);letter-spacing:-.01em}
+.sheet{border-radius:0}
+.sheet .top h3{font-family:var(--display);font-size:34px}
+.op .t{font-size:19px}
+.photo,.grid figure,.albums.mosaic .album,.lb-img,.amb img{border-radius:0}
+.frame::before{opacity:.35}
+.frame .fr-sq{width:30px;height:30px;right:-8px;bottom:-8px}
+
+/* liste: concerte, evenimente, albume */
+.clist .t,.event h3,.album .row span:first-child,.film b,.cl b,.addr b,.lb-title b,.person h3,.stage h3,.moves .tt{font-family:var(--sans);font-weight:400;letter-spacing:-.01em}
+.event h3{font-size:clamp(20px,1.9vw,25px)}
+.cl b{font-size:22px}
+.albums.mosaic .album .row span:first-child{font-family:var(--display);letter-spacing:.02em}
+.grid.amb-grid figure:nth-child(7n+1) figcaption{font-family:var(--display)}
+.err .n{font-family:var(--display);font-style:normal}
+
+/* subsol */
+.ft-top p{font-family:var(--display);font-style:normal;letter-spacing:.02em;text-transform:uppercase;font-size:clamp(26px,3.2vw,46px);line-height:1.12}
+.ft-top p span{display:block}
+.ft-brand .brand span{font-size:20px}
+.ft-nav a,.ft-addr,.ft-sup p{font-size:14.5px}
+.ft-ae{font-size:14px}
+.ft-legal{font:400 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.ft-legal a{letter-spacing:.14em}
+.social a{border-radius:50%}
+
+/* animații: aceeași curbă ca pe Lecții */
+.js .rv{transform:translateY(28px);transition:opacity 1s var(--ease),transform 1.1s var(--ease)}
+
+/* mobil: meniul ca pe Lecții (numere mono, titluri Cinzel) */
+@media (max-width:1180px) and (min-width:921px){.menu a{padding:10px 7px}.menu>li:not(.menu-foot)>a::before{display:none}}
+@media (max-width:920px){
+  .site-header{background:#2a1015}
+  .nav{height:64px}
+  .menu{font-family:var(--sans);text-transform:none;letter-spacing:0;padding-top:96px}
+  .menu>li:not(.menu-foot){border-bottom:1px solid rgba(244,234,220,.12);gap:0}
+  .menu>li:not(.menu-foot)::before{display:none}
+  .menu>li:not(.menu-foot)>a:not([href$="sustine.html"])::before{font:400 11px var(--mono);letter-spacing:.1em;width:34px;display:inline-block;margin:0;vertical-align:middle}
+  .menu a,.menu a[aria-current=page]{font:400 clamp(26px,7.6vw,40px)/1.15 var(--display);letter-spacing:.02em;padding:12px 0}
+  .menu a[aria-current=page]{color:#cfad79;font-style:normal}
+  .menu li:nth-last-child(2) a[href$="sustine.html"]{margin:0;padding:12px 0 12px 34px;border:0;color:#cfad79}
+  .menu .menu-foot,.menu .menu-foot a{font:400 11px var(--mono);letter-spacing:.16em;text-transform:uppercase}
+  .hero-full h1{font-size:clamp(28px,7.6vw,44px)}
+  .hf-ghost{margin-left:0}
+}
+@media (max-width:640px){
+  .wrap{padding:0 20px}
+  .sec{padding:80px 0}
+  .pin b,.stat b{font-size:44px}
+  .btns .btn{flex:0 0 auto}
+}
+.hero-full h1{max-width:none}
+.hero-full h1 em{display:block}
+/* citatele lungi: ca citatul de pe Lecții (Geist subțire); Cinzel rămâne doar la citatul scurt de pe „cortină” */
+.quote p,.pull,.premiu blockquote{font:300 clamp(21px,2vw,27px)/1.4 var(--sans);letter-spacing:-.01em;text-transform:none}
+h1,h2,.cortina blockquote{text-wrap:balance}
+/* calendarul: etichetele mono nu au voie să lățească grila */
+.months{grid-template-columns:repeat(12,minmax(0,1fr))}
+.m{overflow:hidden;min-width:0}
+.m span{letter-spacing:.06em;font-size:10px}
+@media (max-width:920px){.months{grid-template-columns:repeat(6,minmax(0,1fr))}}
+@media (max-width:640px){.m span{font-size:8px;letter-spacing:.02em}.m i{font-size:9px}}
+@media (max-width:640px){.page-head h1,.contact-grid h1{font-size:clamp(28px,8.4vw,40px);overflow-wrap:break-word;hyphens:auto}}
+/* fără valuri între secțiuni: trecere dreaptă, ca pe Lecții */
+.edge{display:none}
+.cortina{padding:clamp(96px,11vw,160px) 0}
+
+/* meniul de sus la ferestre îngustate: niciodată pe două rânduri */
+.menu a{white-space:nowrap}
+@media (max-width:1180px) and (min-width:921px){.menu a{padding:10px 11px}.menu>li:not(.menu-foot)>a::before{display:inline}}
+@media (max-width:1359px) and (min-width:1101px){
+  .menu{letter-spacing:.1em}
+  .menu a{padding:10px 8px}
+  .menu>li:not(.menu-foot)>a:not([href$="sustine.html"])::before{display:none}
+  .menu a::after{left:8px;right:8px}
+  .menu li:nth-last-child(2) a[href$="sustine.html"]{margin-left:8px;padding:11px 13px}
+}
+/* sub 1100px: butonul de meniu, cu același meniu ca pe telefon */
+@media (max-width:1100px){
+  .nav-toggle{display:block}
+  .brand{position:relative;z-index:60}
+  .menu{position:fixed;inset:0;z-index:55;margin:0;background:#2a1015;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;padding:110px clamp(24px,6vw,56px) 40px;overflow:auto;font-family:var(--sans);text-transform:none;letter-spacing:0;clip-path:circle(0 at calc(100% - 38px) 38px);transition:clip-path .6s cubic-bezier(.7,0,.3,1)}
+  .nav-open .menu{clip-path:circle(150% at calc(100% - 38px) 38px)}
+  .nav-open body{overflow:hidden}
+  .menu li{opacity:0;transform:translateY(18px);transition:opacity .4s,transform .5s cubic-bezier(.2,.7,.2,1)}
+  .nav-open .menu li{opacity:1;transform:none}
+  .nav-open .menu li:nth-child(1){transition-delay:.18s}.nav-open .menu li:nth-child(2){transition-delay:.23s}.nav-open .menu li:nth-child(3){transition-delay:.28s}.nav-open .menu li:nth-child(4){transition-delay:.33s}.nav-open .menu li:nth-child(5){transition-delay:.38s}.nav-open .menu li:nth-child(6){transition-delay:.43s}.nav-open .menu li:nth-child(7){transition-delay:.48s}.nav-open .menu li:nth-child(8){transition-delay:.53s}.nav-open .menu li:nth-child(9){transition-delay:.58s}
+  .menu>li:not(.menu-foot){display:flex;align-items:center;gap:0;border-bottom:1px solid rgba(244,234,220,.12)}
+  .menu>li:not(.menu-foot)::before{display:none}
+  .menu>li:not(.menu-foot)>a:not([href$="sustine.html"])::before{display:inline-block;width:34px;margin:0;vertical-align:middle;font:400 11px var(--mono);letter-spacing:.1em;color:#cfad79}
+  .menu a,.menu a[aria-current=page]{display:inline-block;padding:12px 0;font:400 clamp(26px,5vw,40px)/1.15 var(--display);letter-spacing:.02em;color:#f4eadc;white-space:normal}
+  .menu a[aria-current=page]{color:#cfad79}
+  .menu a::after{display:none}
+  .menu li:nth-last-child(2) a[href$="sustine.html"]{margin:0;padding:12px 0 12px 34px;border:0;background:none;color:#cfad79}
+  .menu .menu-foot{display:flex;flex-direction:column;gap:6px;margin-top:36px;padding-top:0;border:0;font:400 11px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#cdb8ab}
+  .menu .menu-foot a{font:400 11px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#cdb8ab;padding:2px 0}
+}
+
+/* treceri „foaie suprapusă”: la fiecare schimbare de culoare, secțiunea de jos
+   stă peste cea de sus și aruncă o umbră în sus (ca o partitură pusă peste alta) */
+main>.edge+*,main>.bg2,main>.bg2+*,.site-footer{
+  position:relative;z-index:2;background-color:var(--bg);
+  box-shadow:0 -24px 44px -20px rgba(20,6,9,.5)}
+main>.alt.edge+*,main>.edge+.alt{box-shadow:0 -24px 44px -20px rgba(20,6,9,.55)}
+.site-footer{background-color:var(--ft-bg);box-shadow:0 -24px 44px -20px rgba(20,6,9,.45)}
+main>.bg2{background-color:var(--bg2)}
+/* Concerte și În presă: fără linia scurtă sub ultimul articol din an; rămâne doar linia lungă dintre ani */
+.events>.event:last-child,.clips>.clip:last-child,.clips>li:last-child>.clip{border-bottom:0}
+/* datele din „În presă”, mono ca la Concerte */
+.clip .cd{font:400 12px var(--mono);font-style:normal;letter-spacing:.14em;padding-top:6px}
+/* Contact: doar liniile dintre rânduri, fără cea de sus și cea de jos */
+.clines{border-top:0}
+.clines>.cline:last-child{border-bottom:0}
+/* Susține: IBAN-ul pe un singur rând, pe toată lățimea casetei */
+.data>.iban{grid-column:1 / -1}
+.data>.iban .mono{white-space:nowrap}
+@media (max-width:420px){.data>.iban .mono{font-size:13.5px;letter-spacing:0}}
+.btn{max-width:100%;white-space:normal;text-align:center}
+/* Susține: butoanele „Copiază” aliniate la marginea din dreapta a casetei */
+.data .v{flex-wrap:nowrap}
+.data .v .copy{margin-left:auto;flex:none}
+@media (max-width:560px){.data>.iban .v{flex-wrap:wrap;row-gap:10px}}
+.contact-grid>*{min-width:0}
+.cl b{overflow:hidden;text-overflow:ellipsis}
+/* citatul din Susține: ghilimele românești în text, linie aurie în stânga (ca pe Lecții) */
+.quote{background:none;padding:4px 0 4px 28px;border-left:1px solid var(--accent);gap:22px}
+/* mai puțin gol între deschiderea paginii (titlu + foto) și prima secțiune de text */
+.page-head{padding-bottom:clamp(40px,4vw,56px)}
+.page-head+.sec,.page-head+.edge+.sec{padding-top:clamp(32px,3vw,48px)}
+/* Povestea: al doilea paragraf din deschidere, sub textul mare */
+.page-head .intro-more{color:var(--muted);font-size:16px;line-height:1.75;max-width:34em}
+/* Povestea: varianta D „înălțimi egale” — fotografia aproape orizontală, cât textul;
+   textul centrat pe înălțimea ei, fără gol sus sau jos; paragrafele la aceeași lățime */
+@media (min-width:921px){
+  .story-head .wrap{grid-template-columns:1fr 1fr;gap:72px;align-items:stretch}
+  .story-head .stack{justify-content:center;gap:0}
+  .story-head h1{margin:20px 0 26px}
+  .story-head .lead,.story-head .intro-more{max-width:none}
+  .story-head .intro-more{margin-top:16px}
+  .story-head figure{display:flex}
+  .story-head .frame{flex:1;display:flex}
+  .story-head .photo{flex:1;position:relative;aspect-ratio:auto!important;min-height:340px}
+  .story-head .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+}
+
+/* mai puțin gol: spațiu de secțiune mai mic, iar două secțiuni de aceeași culoare la rând
+   nu-și mai adună spațiile (rămâne doar spațiul de sub prima) */
+.sec{padding:clamp(72px,8vw,120px) 0}
+main>.sec:not(.alt):not(.bg2)+.sec:not(.alt):not(.bg2){padding-top:0}
+main>.alt+.alt,main>.bg2+.bg2{padding-top:0}
+/* linkurile mici din text nu se rup pe două rânduri */
+.link{white-space:nowrap}
+/* cifrele de pe Acasă: ca pe Lecții — o linie subțire deasupra, fără cerculețe */
+.pin::before,.string .pin::after{display:none!important}
+.string::before{display:block!important;top:0;background:var(--line)}
+.pin{padding-top:28px}
+
+/* hero Acasă mai înalt și pe toată lățimea, ca pe Lecții */
+@media (min-width:921px){
+  .hero-full{min-height:max(640px,calc(100vh - 78px));min-height:max(640px,calc(100svh - 78px))}
+  .hf-bg img{width:100%;object-position:62% 50%;-webkit-mask-image:none;mask-image:none}
+  .hf-bg::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(26,10,13,.94) 0%,rgba(26,10,13,.78) 32%,rgba(26,10,13,.3) 58%,rgba(26,10,13,0) 78%)}
+  .hf-bg::after{z-index:1;height:30%}
+}
+@media (max-width:920px){.hf-bg{height:96vw;max-height:620px}}
+
+/* cifrele în hero, sub Marele Premiu, pe fundal vișiniu */
+.hero-full .string{max-width:none;margin:44px 0 0;padding:28px 0 0;position:relative}
+.hero-full .string::before{display:block!important;left:0;right:0;top:0;background:rgba(207,173,121,.28)}
+.hero-full .pins{gap:32px}
+.hero-full .pin{padding-top:0}
+.hero-full .pin b{color:#f4eadc;font-size:clamp(38px,3.6vw,54px)}
+.hero-full .pin span{color:#cdb8ab;margin-top:10px}
+.hf-row{padding-top:0;border-top:0;margin-top:36px}
+@media (max-width:920px){.hero-full .string{margin-top:36px}.hero-full .string .pins{grid-template-columns:1fr 1fr;row-gap:28px}}
+.hero-full .string{max-width:860px}
+/* hero Acasă: textul mai spre stânga, ca pe Lecții (nu centrat în coloana de 1280px) */
+@media (min-width:921px){.hf-in{max-width:none;padding-left:clamp(40px,9vw,180px);padding-right:clamp(40px,9vw,180px)}}
+/* hero Acasă: textul centrat pe verticală, cifrele coborâte la baza imaginii */
+@media (min-width:921px){
+  .hero-full{align-items:stretch}
+  .hf-in{display:flex;flex-direction:column;padding-top:72px;padding-bottom:48px}
+  .hf-text{margin-top:auto}
+  .hero-full .string{margin-top:auto;padding-top:24px}
+  .hf-text{padding-bottom:56px}
+}
+@media (min-width:921px){.hero-full .string{max-width:none;margin-right:2vw}}
+/* cifrele din hero: un bloc compact, centrat pe orizontală */
+@media (min-width:921px){
+  .hero-full .string{align-self:center;margin-left:auto;margin-right:auto;width:auto;max-width:none}
+  .hero-full .string .pins{grid-template-columns:repeat(4,auto);gap:clamp(40px,4.5vw,80px)}
+  .hero-full .pin span{max-width:210px}
+}
+
+/* ===== hero Acasă ca în macheta aprobată ===== */
+/* antet: subtitlu sub logo, meniul pe mijloc, „Susține ↗” în dreapta */
+.brand span{display:flex;flex-direction:column;gap:6px;line-height:1}
+.brand span em{color:inherit}
+.brand span small{font:400 9.5px var(--mono);letter-spacing:.22em;text-transform:uppercase;color:#cfad79}
+.ft-brand .brand span small{display:none}
+@media (min-width:1101px){
+  .nav .menu{margin-left:auto;margin-right:auto}
+  .menu li:nth-last-child(2){position:absolute;right:clamp(20px,4vw,56px)}
+  .nav{position:relative}
+}
+.menu li:nth-last-child(2) a[href$="sustine.html"]::after{content:" ↗";display:inline!important;position:static;background:none;transform:none}
+@media (max-width:1100px){.menu li:nth-last-child(2) a[href$="sustine.html"]::after{content:""}}
+
+@media (min-width:921px){
+  .hf-in{padding-left:max(32px,4.6vw);padding-right:max(32px,4.6vw)}
+  .hf-text,.hero-full .eyebrow,.hero-full h1{max-width:none}
+  .hero-full h1{font-size:clamp(40px,4.4vw,88px);line-height:1.1;margin-bottom:0}
+  .hero-full .hero-sub{display:flex;align-items:center;gap:18px;margin:18px 0 0}
+  .hero-full .hero-sub::before{content:"";width:32px;height:1px;background:#cfad79}
+  .hero-full .hero-sub span{font:400 max(14px,1.4vw) var(--display);letter-spacing:.12em;text-transform:uppercase;color:#e3cfa9}
+  .hero-full .lead{margin:2.2vw 0 36px;max-width:max(380px,31vw);font-size:max(15px,1.1vw);line-height:1.7;color:#f4eadc}
+  .hero-full .btn-solid{padding:max(14px,1.3vw) max(22px,2.1vw);font-size:max(11px,.82vw)}
+  .hero-full .btns{align-items:center;gap:28px}
+  .hf-ghost{font:400 11px var(--mono)!important;letter-spacing:.18em!important}
+  .hero-full .string{width:min(1100px,64vw)}
+  .hero-full .string .pins{grid-template-columns:repeat(4,1fr);gap:40px}
+  .hero-full .pin b{font-size:clamp(44px,4.6vw,66px)}
+  .hero-full .pin span{max-width:230px;font-size:10.5px;color:#a98b85}
+}
+.hero-full .hero-sub{display:none}
+@media (min-width:921px){.hero-full .hero-sub{display:flex}}
+.hero-full .lead .ae{color:inherit;text-decoration:underline;text-decoration-color:#cfad79;text-underline-offset:3px}
+.brand span{display:block;white-space:nowrap}
+.brand span small{display:block;margin-top:6px}
+@media (min-width:921px){
+  .hf-bg img{filter:brightness(.9) saturate(.85)}
+  .hf-bg::before{background:linear-gradient(90deg,rgba(26,10,13,.92) 0%,rgba(26,10,13,.74) 34%,rgba(26,10,13,.26) 60%,rgba(26,10,13,0) 80%)}
+  .hf-bg::after{height:38%;background:linear-gradient(180deg,rgba(26,10,13,0),rgba(26,10,13,.5) 52%,#1a0a0d)}
+}
+.site-header .brand span{text-transform:uppercase;font-size:17px;letter-spacing:.06em}
+/* cifrele din hero aliniate la stânga, pe aceeași linie cu restul textului */
+@media (min-width:921px){.hero-full .string{align-self:flex-start;margin-left:0;margin-right:0}}
+@media (max-width:640px){.link{white-space:normal}}
+/* după deschiderea paginii, o secțiune de altă culoare își păstrează spațiul întreg (sus = jos) */
+.page-head+.alt,.page-head+.edge+.alt,.page-head+.bg2,.page-head+.edge+.bg2{padding-top:clamp(72px,8vw,120px)}

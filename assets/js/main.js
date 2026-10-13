@@ -15,6 +15,18 @@
     rv.forEach(function(el,i){ el.style.transitionDelay=((i%4)*70)+'ms'; io.observe(el); });
   } else rv.forEach(function(el){el.classList.add('in');});
 
+  /* cifrele cresc când ajung pe ecran (ca pe Lecții de pian) */
+  var cnt=d.querySelectorAll('.pin b');
+  if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion:reduce)').matches){
+    var co=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting) return; co.unobserve(e.target);
+      var el=e.target, m=el.textContent.match(/^(\d+)(.*)$/); if(!m) return;
+      var n=+m[1], s=m[2], t0=performance.now();
+      (function f(t){var p=Math.min(1,(t-t0)/1400), k=1-Math.pow(1-p,3); el.textContent=Math.round(n*k)+s; if(p<1) requestAnimationFrame(f);})(t0);
+    });},{threshold:.4});
+    cnt.forEach(function(el){co.observe(el);});
+  }
+
   /* antet umbrit la derulare */
   var sc=function(){ root.classList.toggle('scrolled', window.scrollY>8); }; sc(); window.addEventListener('scroll',sc,{passive:true});
 
