@@ -577,7 +577,8 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:400;color:var(--accent)}
 .part.open{border-style:dashed;border-left-width:3px;background:transparent}
 
 /* programul de sală */
-.program{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
+.program{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center}
+@media (min-width:921px){.program .intro{position:relative;top:-2%}}
 .program .intro p{color:var(--muted);max-width:28em}
 .program .intro .photo{margin-top:44px;aspect-ratio:16/10;border:0}
 .sheet{background:#f6eedf;color:#2a1417;padding:54px 56px 48px;border-radius:2px;box-shadow:0 30px 60px rgba(0,0,0,.35);position:relative}
@@ -1267,4 +1268,42 @@ main>.alt+.alt,main>.bg2+.bg2{padding-top:0}
   .nav-toggle span:nth-child(2){top:27px;width:17px}
   .nav-open .nav-toggle span:nth-child(1){top:22px;width:28px}
   .nav-open .nav-toggle span:nth-child(2){top:22px;width:28px}
+}
+
+/* Subsol varianta A — bandă ca la Lecții de pian */
+.ft-a{padding:0 32px 32px;border-top:0}
+.fa-sup,.fa-bar{max-width:var(--wrap);margin:0 auto}
+.fa-sup{display:flex;align-items:center;gap:28px;padding:26px 0;border-bottom:1px solid var(--ft-line)}
+.fa-sup p{margin:0;flex:1;color:var(--ft-head);font-size:15px}
+.fa-k,.fa-go,.fa-social,.fa-copy,.fa-brand small{font:400 11px var(--mono);letter-spacing:.18em;text-transform:uppercase}
+.fa-k{color:var(--ft-accent)}
+.fa-go{color:var(--ft-head);white-space:nowrap;padding-bottom:3px;border-bottom:1px solid rgba(207,173,121,.5)}
+.fa-go:hover{color:var(--ft-accent);opacity:1}
+.fa-bar{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:24px 40px;padding-top:30px}
+.fa-brand{display:flex;align-items:center;gap:14px;color:var(--ft-accent)}
+.fa-brand svg{width:46px;height:46px;flex-shrink:0}
+.fa-brand span{display:flex;flex-direction:column;gap:6px}
+.fa-brand b{font:400 18px var(--display);letter-spacing:.06em;color:var(--ft-head);white-space:nowrap}
+.fa-brand small{color:var(--ft-faint);letter-spacing:.14em}
+.fa-social{display:flex;gap:24px;justify-self:center}
+.fa-social a{color:var(--ft-head);white-space:nowrap}
+.fa-social a:hover{color:var(--ft-accent);opacity:1}
+.fa-copy{color:var(--ft-faint);letter-spacing:.14em}
+.fa-copy a{color:var(--ft-faint)}
+.fa-copy a:hover{color:var(--ft-accent);opacity:1}
+.ft-a .totop{width:46px;height:46px;margin:0;border-radius:50%;border:1px solid rgba(243,235,223,.3);justify-content:center;color:var(--ft-head);transition:background .3s,color .3s,border-color .3s}
+.ft-a .totop svg{width:18px;height:18px;color:currentColor}
+.ft-a .totop:hover{background:var(--ft-head);color:var(--ft-bg);border-color:var(--ft-head);opacity:1}
+@media (max-width:1100px){
+  .fa-bar{grid-template-columns:1fr auto;grid-template-areas:"brand top" "social social" "copy copy";gap:20px 16px}
+  .fa-brand{grid-area:brand}.fa-social{grid-area:social;justify-self:start}.fa-copy{grid-area:copy}.ft-a .totop{grid-area:top}
+}
+@media (max-width:640px){
+  .ft-a{padding:0 16px 28px}
+  .fa-sup{flex-wrap:wrap;gap:12px 20px;padding:22px 0}
+  .fa-sup p{flex-basis:100%;order:2}.fa-go{order:3}
+  .fa-brand svg{width:40px;height:40px}
+  .fa-brand small{letter-spacing:.06em;white-space:nowrap}
+  .fa-social{gap:18px;flex-wrap:wrap}
+  .ft-a .totop{width:40px;height:40px}
 }
