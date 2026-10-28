@@ -43,7 +43,7 @@
   }
 
   /* contact: adresele se compun în browser */
-  var u='contact', h='fabricadepian.ro', p='40736674176';
+  var u='fabricadepian.ro', h='gmail.com', p='40736674176';
   d.querySelectorAll('[data-c]').forEach(function(a){
     var k=a.getAttribute('data-c'), s=a.getAttribute('data-subject');
     if(k==='mail') a.href='mailto:'+u+'@'+h+(s?'?subject='+encodeURIComponent(s):'');
