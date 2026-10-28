@@ -1205,3 +1205,27 @@ main>.alt+.alt,main>.bg2+.bg2{padding-top:0}
 .sec.sec-tight{padding-top:56px}
 .faint.sub{font-size:14px;margin-top:-6px}
 .mov h2{font-size:clamp(32px,3.4vw,44px);margin-top:8px}
+
+/* ===== meniu mobil identic cu cel de pe aurelianepuras.github.io (dimensiuni, animații, X în cerc) ===== */
+@media (max-width:920px){
+  .menu{justify-content:flex-start;padding:calc(78px + 24px) clamp(24px,6vw,56px) max(14px,env(safe-area-inset-bottom));overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;clip-path:circle(0 at calc(100% - 44px) 39px);visibility:hidden;transition:clip-path .6s cubic-bezier(.7,0,.3,1),visibility 0s linear .6s}
+  .nav-open .menu{clip-path:circle(150% at calc(100% - 44px) 39px);visibility:visible;transition:clip-path .6s cubic-bezier(.7,0,.3,1),visibility 0s}
+  .menu>li:first-child{margin-top:auto}
+  .menu>li:nth-last-child(2){margin-bottom:auto}
+  .menu>li:not(.menu-foot){display:block;border-bottom:1px solid rgba(244,234,220,.13)}
+  .nav-open .menu li:nth-child(1){transition-delay:.18s}.nav-open .menu li:nth-child(2){transition-delay:.23s}.nav-open .menu li:nth-child(3){transition-delay:.28s}.nav-open .menu li:nth-child(4){transition-delay:.33s}.nav-open .menu li:nth-child(5){transition-delay:.38s}.nav-open .menu li:nth-child(6){transition-delay:.43s}.nav-open .menu li:nth-child(7){transition-delay:.48s}.nav-open .menu li:nth-child(8){transition-delay:.53s}.nav-open .menu li.menu-foot{transition-delay:.55s}
+  .nav .menu>li:not(.menu-foot)>a[href],.nav .menu li:nth-last-child(2) a[href$="sustine.html"]{display:flex;align-items:baseline;gap:14px;margin:0;padding:11px 0 9px;border:0;background:none;color:#f4eadc;font:400 clamp(19px,5vw,24px)/1.2 var(--display);letter-spacing:.04em;text-transform:none;-webkit-tap-highlight-color:transparent}
+  .nav .menu>li:not(.menu-foot)>a[href]::before{counter-increment:nr;content:counter(nr,decimal-leading-zero);display:block;width:24px;flex:none;margin:0;font:400 9.5px var(--mono);letter-spacing:.1em;color:#cfad79}
+  .nav .menu>li:not(.menu-foot)>a[aria-current=page]{color:#cfad79}
+  .menu .menu-foot{flex-direction:row;flex-wrap:wrap;gap:0 18px;margin:0;padding:28px 0 0;border:0}
+  .nav .menu .menu-foot span{order:1;margin-left:auto;padding:5px 0;font:400 10.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(244,234,220,.6);white-space:nowrap}
+  .nav .menu .menu-foot a{display:inline-flex;align-items:center;padding:5px 0;font:400 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:rgba(244,234,220,.6);transition:color .25s}
+  .nav .menu .menu-foot a:hover{color:#cfad79}
+  /* burger: două linii (28/17) → X mic de 14px într-un cerc subțire */
+  .nav-toggle::before{content:"";position:absolute;inset:9px;border:1px solid rgba(244,234,220,.13);border-radius:50%;opacity:0;transform:scale(.6);transition:opacity .3s,transform .45s var(--ease)}
+  .nav-open .nav-toggle::before{opacity:1;transform:none}
+  .nav-toggle span{right:10px;transition:transform .6s cubic-bezier(.76,0,.24,1),width .5s cubic-bezier(.76,0,.24,1),right .5s cubic-bezier(.76,0,.24,1),top .6s cubic-bezier(.76,0,.24,1)}
+  .nav-toggle span:nth-child(1){top:19px;width:28px}
+  .nav-toggle span:nth-child(2){top:27.5px;width:17px}
+  .nav-open .nav-toggle span:nth-child(1),.nav-open .nav-toggle span:nth-child(2){top:23.25px;right:17px;width:14px}
+}
